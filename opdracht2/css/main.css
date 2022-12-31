@@ -77,6 +77,9 @@ body {
     background-color: var(--clr-middle-grey);
     line-height: 1.5;
     min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
 }
 
 /* make images easier to work with */
@@ -142,4 +145,83 @@ picture {
 .fs-700,
 .fs-600 {
     line-height: 1.1;
+}
+
+
+/* ------------------- */
+/* Compontents         */
+/* ------------------- */
+/* header */
+
+/* card */
+#cards {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.cards__card {
+    max-height: 35rem;
+    max-width: 24rem;
+    background-color: var(--clr-dark-grey);
+    border-radius: 10px;
+}
+
+.cards__card picture {
+    height: 80%;
+    width: 100%;
+}
+
+.cards__card img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.cards__card__context {
+    padding: 10px;
+}
+
+@media (min-width: 45em) {
+    main {
+        width: 70%;
+    }
+    .cards__card__context {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 2rem 4rem;
+        flex: 1 0 21%;
+    }
+    .cards__card {
+        max-height: 45rem;
+        max-width: 30rem;
+    }
+    /* .cards__card picture {
+        height: 90%;
+    } */
+}
+
+.cards__card__context button {
+    background: var(--clr-red);
+    border: none;
+    font-family: var(--ff-roboto);
+    color: var(--clr-white);
+    width: 40%;
+    height: 2rem;
+    border-radius: 10px;
+}
+
+.cards__card__context button:hover {
+    background: var(--clr-blue);
+    transition: all 0.8s;
+    cursor: pointer;
+}
+
+@media (min-width: 45em) {
+    .cards__card__context button {
+        height: 3rem;
+    }
 }
