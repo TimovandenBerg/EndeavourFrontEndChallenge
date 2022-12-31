@@ -12,6 +12,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 console.log("hoi");
 // api url
 const api_url = "https://www.rijksmuseum.nl/api/nl/collection?key=qL9Y9yvJ";
+// https://www.rijksmuseum.nl/api/nl/collection?key=qL9Y9yvJ&involvedMaker=Rembrandt+van+Rijn
 // getting api data
 function getApi(url) {
     return __awaiter(this, void 0, void 0, function* () {

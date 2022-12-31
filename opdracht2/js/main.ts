@@ -4,6 +4,8 @@ console.log("hoi");
 // api url
 const api_url = "https://www.rijksmuseum.nl/api/nl/collection?key=qL9Y9yvJ";
 
+// https://www.rijksmuseum.nl/api/nl/collection?key=qL9Y9yvJ&involvedMaker=Rembrandt+van+Rijn
+
 // getting api data
 async function getApi(url: RequestInfo | URL) {
     const response = await fetch(url);
