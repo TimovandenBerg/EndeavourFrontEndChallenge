@@ -79,7 +79,9 @@ body {
     min-height: 100vh;
 
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;   
 }
 
 /* make images easier to work with */
@@ -151,7 +153,13 @@ picture {
 /* ------------------- */
 /* Compontents         */
 /* ------------------- */
-/* header */
+/* searchbar */
+.search__bar {
+    padding: 15px;
+    margin-top: 1rem;
+    border-radius: 10px;
+    border: none;
+}
 
 /* card */
 #cards {

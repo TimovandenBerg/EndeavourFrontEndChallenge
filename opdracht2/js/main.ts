@@ -43,3 +43,18 @@ function showCards(data: {[x: string]: any; list: any; }) {
 
     card.innerHTML = context;
 }
+
+function searchArtObject() {
+    var input = document.getElementById("js--searchbar").value;
+    input = input.toLowerCase();
+    var x = document.getElementsByClassName("cards__card");    
+    
+    for (let i = 0; i < x.length; i++) {
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display = "none";
+        }
+        else {
+            x[i].style.display = "block";
+        }
+    }
+}
