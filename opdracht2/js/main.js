@@ -1,4 +1,5 @@
 "use strict";
+// import * as _ from 'lodash';
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,11 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-// import * as _ from 'lodash';
-console.log("hoi");
 // api url
-const api_url = "https://www.rijksmuseum.nl/api/nl/collection?key=qL9Y9yvJ";
-// https://www.rijksmuseum.nl/api/nl/collection?key=qL9Y9yvJ&involvedMaker=Rembrandt+van+Rijn
+const collectie = "https://www.rijksmuseum.nl/api/nl/collection?key=qL9Y9yvJ";
+const rembrandt = "https://www.rijksmuseum.nl/api/nl/collection?key=qL9Y9yvJ&involvedMaker=Rembrandt+van+Rijn";
+var api_url = collectie;
 // getting api data
 function getApi(url) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -27,8 +27,6 @@ function showCards(data) {
     var card = document.getElementById("cards");
     var context = '';
     var artObjects = data.artObjects;
-    console.log(card);
-    console.log(artObjects[0]);
     // console.log(data.artObjects[0]);
     for (let i = 0; i < artObjects.length; i++) {
         var id = artObjects[i].id;
@@ -57,4 +55,17 @@ function searchArtObject() {
             x[i].style.display = "block";
         }
     }
+}
+function changeSearchLink(changeUrl) {
+    const btn = document.getElementById("js--filterBtn");
+    console.log(btn);
+    if (api_url === collectie) {
+        api_url = changeUrl;
+        btn.style.backgroundColor = "var(--clr-blue)";
+    }
+    else {
+        api_url = collectie;
+        btn.style.backgroundColor = "var(--clr-red)";
+    }
+    getApi(api_url);
 }

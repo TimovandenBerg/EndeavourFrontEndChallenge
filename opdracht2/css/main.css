@@ -161,6 +161,43 @@ picture {
     border: none;
 }
 
+/* filter button */
+.filter__btn {
+    padding: 15px;
+    margin-top: 1rem;
+    border-radius: 10px;
+    border: none;
+    color: var(--clr-white);
+    background-color: var(--clr-red);
+    transition: all 0.8s;
+}
+
+.filter__btn:hover {
+    cursor: pointer;
+    background-color: var(--clr-blue);
+}
+
+@media (min-width: 35em) {
+    header {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        justify-content: space-between;
+        width: 50%;
+    }
+    .search {
+        order: 2;
+    }
+    .filter {
+        order: 1;
+    }
+}
+@media (min-width: 45em) {
+    header {
+        width: 30%;
+    }
+}
+
 /* card */
 #cards {
     padding: 1rem;
