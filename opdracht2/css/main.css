@@ -69,6 +69,10 @@ p {
     font-weight: 400;
 }
 
+p {
+    margin-bottom: 1rem;
+}
+
 /* set up the body */
 body {
     font-family: var(--ff-roboto);
@@ -76,12 +80,7 @@ body {
     color: var(--clr-white);
     background-color: var(--clr-middle-grey);
     line-height: 1.5;
-    min-height: 100vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;   
+    min-height: 100vh;  
 }
 
 /* make images easier to work with */
@@ -154,10 +153,22 @@ a {
     line-height: 1.1;
 }
 
+.red {
+    color: var(--clr-red);
+}
+
 
 /* ------------------- */
 /* Compontents         */
 /* ------------------- */
+/* CARDS */
+.body__cards {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
 /* searchbar */
 .search__bar {
     padding: 15px;
@@ -273,5 +284,69 @@ a {
 @media (min-width: 45em) {
     .cards__card__context button {
         height: 3rem;
+    }
+}
+
+
+/* DETAIL */
+.body__detail {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+#detail {
+    background-color: var(--clr-dark-grey);
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+.detail__img picture img {
+    width: 100%;
+    height: auto;
+}
+
+.detail__terug button{
+    background-color: var(--clr-red);
+    border: none;
+    font-family: var(--ff-roboto);
+    color: var(--clr-white);
+    width: 50%;
+    height: 2rem;
+    border-radius: 10px;
+    transition: all 0.8s;
+}
+
+.detail__terug button:hover {
+    background-color: var(--clr-blue);
+    cursor: pointer;
+}
+
+@media (min-width: 35em) {
+    .main__detail {
+        width: 60%;
+    }
+    .detail__titel h1 {
+        font-size: var(--fs-700);
+    }
+    .detail__img picture img {
+        width: 50vw;
+        height: auto;
+    }
+}
+
+@media (min-width: 45em) {
+    .detail__img picture img {
+        width: 30vw;
+        height: auto;
+    }
+    .detail__terug button {
+        width: 30%;
+        height: 4rem;
     }
 }
