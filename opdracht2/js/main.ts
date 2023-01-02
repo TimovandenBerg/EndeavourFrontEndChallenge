@@ -1,7 +1,7 @@
 // import * as _ from 'lodash';
 
 // api url
-const collectie = "https://www.rijksmuseum.nl/api/nl/collection?key=qL9Y9yvJ&ps=10";
+const collectie = "https://www.rijksmuseum.nl/api/nl/collection?key=qL9Y9yvJ&ps=100";
 const rembrandt = "https://www.rijksmuseum.nl/api/nl/collection?key=qL9Y9yvJ&involvedMaker=Rembrandt+van+Rijn";
 
 var api_url = collectie;
