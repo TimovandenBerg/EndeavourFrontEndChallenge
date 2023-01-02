@@ -1,7 +1,7 @@
 // import * as _ from 'lodash';
 
 // api url
-const collectie = "https://www.rijksmuseum.nl/api/nl/collection?key=qL9Y9yvJ";
+const collectie = "https://www.rijksmuseum.nl/api/nl/collection?key=qL9Y9yvJ&ps=10";
 const rembrandt = "https://www.rijksmuseum.nl/api/nl/collection?key=qL9Y9yvJ&involvedMaker=Rembrandt+van+Rijn";
 
 var api_url = collectie;
@@ -25,6 +25,8 @@ function showCards(data: {[x: string]: any; list: any; }) {
     // console.log(data.artObjects[0]);
     for (let i = 0; i < artObjects.length; i++) {
         var id = artObjects[i].id;
+        var objectNumber = artObjects[i].objectNumber;
+        console.log(objectNumber);
         var title = artObjects[i].title;
         var img = artObjects[i].webImage.url;        
         context += 
@@ -32,12 +34,11 @@ function showCards(data: {[x: string]: any; list: any; }) {
                 <picture><img src="${img}"></picture>
                 <section class="cards__card__context">
                     <h1>${title}</h1>
-                    <button class="fs-400">Bekijk</button>
+                    <button class="fs-400" onClick="stashId('${objectNumber}')"><a href="detail-page.html">Bekijk</a></button>
                 </section>
             </section>`
             ;
     }
-
     card.innerHTML = context;
 }
 
@@ -58,7 +59,6 @@ function searchArtObject() {
 
 function changeSearchLink(changeUrl: string) {
     const btn: any = document.getElementById("js--filterBtn");
-    console.log(btn);
     
     if (api_url === collectie) {
         api_url = changeUrl;
@@ -69,4 +69,10 @@ function changeSearchLink(changeUrl: string) {
         btn.style.backgroundColor = "var(--clr-red)";
     }
     getApi(api_url);
+}
+
+function stashId(objectNumber: string) {
+    console.log(objectNumber);
+     
+    localStorage.setItem("stashId", objectNumber);
 }
